@@ -100,7 +100,8 @@ class eaoa:
                     self.x[i] = self.x[i] + beta * self.c1 * r1 * self.acc[i] * d * (self.x[rand_idx] - self.x[i])
                 else:
                     # eq 17 (exploitation with multiverse directing)
-                    self.x[i] = self.best_pos + f_new * self.c2 * r1 * self.acc[i] * d * (t_var * self.best_pos - self.x[i])
+                    self.x[i] = self.best_pos + f_new * self.c2 * r1 * self.acc[i] * d * t_var * (self.best_pos - self.x[i])
+                    # self.x[i] = self.best_pos + f_new * self.c2 * r1 * self.acc[i] * d * (t_var * self.best_pos - self.x[i])
 
                 self.x[i] = np.clip(self.x[i], self.lb, self.ub)
 
