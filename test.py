@@ -7,7 +7,7 @@ l = 100
 num_sensors = 50
 rs = 10
 pop_size = 40
-max_iter = 100
+max_iter = 500
 minimize = False
 
 
