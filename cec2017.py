@@ -11,9 +11,12 @@ ub = 100
 times = 25
 
 # Function IDs 1 to 30
-function_ids = range(1, 6)
+function_ids = range(1, 31)
 
 final_stats = {}
+
+print(f"{'Func ID':<10} | {'Mean Error':<15} | {'Std Dev':<15} | {'Best Error':<15}")
+print("-" * 65)
 
 for f_id in function_ids:
     func_name = f"F{f_id}2017"
@@ -70,8 +73,6 @@ for f_id in function_ids:
             'worst': max_val
         }
 
-        print(f"{'Func ID':<10} | {'Mean Error':<15} | {'Std Dev':<15} | {'Best Error':<15}")
-        print("-" * 65)
         print(f"F{f_id:<9} | {mean_val:.4e}      | {std_val:.4e}      | {min_val:.4e}")
 
 print("-" * 65)
