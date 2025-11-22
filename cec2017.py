@@ -41,15 +41,18 @@ for f_id in function_ids:
         )
 
         best_pos, best_score = optimizer.optimize()
-
         results[f_id] = best_score
-        print(f"-> F{f_id} Best Score: {best_score:.6e}")
+        bias = f_id * 100
+        print(f"-> F{f_id} Best Score (Error): {best_score - bias:.6e}")
+        # print(f"-> F{f_id} Best Score: {best_score:.6e}")
 
     except Exception as e:
         print(f"-> F{f_id} Error: {e}")
 
 # Final Summary
+
 print(f"{'Func ID':<10} | {'Best Fitness':<20}")
 print("-" * 35)
 for f_id, score in results.items():
-    print(f"F{f_id:<9} | {score:.6e}")
+    bias = f_id * 100
+    print(f"F{f_id:<9} | {score - bias:.6e}")
